@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Privacy Policy — Scraply</title>
+<style>
+  :root {
+    --bg: #f7f5f1;
+    --surface: #ffffff;
+    --text: #1a1a1a;
+    --text-secondary: #6b6b68;
+    --accent: #1366ff;
+    --border: #e5e2da;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+  }
+  .wrap { max-width: 680px; margin: 0 auto; padding: 56px 24px 96px; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .back { font-size: 14px; margin-bottom: 24px; display: inline-block; }
+  h1 { font-size: 28px; margin: 0 0 4px; letter-spacing: -0.02em; }
+  .updated { color: var(--text-secondary); font-size: 14px; margin: 0 0 40px; }
+  h2 { font-size: 18px; margin: 40px 0 12px; }
+  p, li { font-size: 15px; color: var(--text); }
+  ul { padding-left: 20px; }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 20px 22px;
+    margin: 16px 0;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="index.html">&larr; Scraply</a>
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: August 2026</p>
+
+    <p>This policy explains what information Scraply collects, how it's used, and — just as
+      importantly — what we deliberately do <strong>not</strong> do with your data.</p>
+
+    <h2>What we collect</h2>
+    <ul>
+      <li><strong>Your Google account basics</strong> — name, email address, and profile photo, obtained
+        when you sign in with Google. Used only to identify your account and let you sign in again on
+        another device.</li>
+      <li><strong>A minimal account record</strong> — an internal account identifier and whether you've
+        completed initial setup. Stored in our backend (Supabase) purely to make sign-in work.</li>
+    </ul>
+
+    <h2>Your journal content — photos and memories</h2>
+    <div class="card">
+      <p style="margin:0">Your photos and journal entries are encrypted <strong>on your device</strong>,
+        before they're ever uploaded anywhere, and stored in a hidden folder inside your own Google Drive
+        account — not on our servers, and not visible in your regular Drive. We do not, and cannot, read
+        this content. The encryption key is generated randomly per account, never derived from anything
+        guessable, and is itself stored in a way that only your signed-in account can retrieve it.</p>
+    </div>
+
+    <h2>What we don't do</h2>
+    <ul>
+      <li>No advertising, and no ad networks embedded in the app.</li>
+      <li>No analytics or usage tracking beyond what's strictly needed to make the app function.</li>
+      <li>We never sell or share your data with third parties.</li>
+      <li>Your journal content is never accessible to us — it's encrypted before it leaves your device.</li>
+    </ul>
+
+    <h2>Google Drive access</h2>
+    <p>Scraply requests access to a hidden, app-specific folder in your Google Drive
+      (the <code>drive.appdata</code> scope) — this folder is not visible in your normal Drive interface
+      and cannot be browsed or accessed by any other app. It's used solely to store your encrypted backup.</p>
+
+    <h2>Data retention and deletion</h2>
+    <p>Your journal content lives in your own Google Drive for as long as you keep the app installed and
+      signed in. To request deletion of your account record from our backend, contact us at the email
+      below — we'll remove it promptly. Removing the app's access to your Drive can also be done directly
+      from your Google Account's security settings at any time.</p>
+
+    <h2>Changes to this policy</h2>
+    <p>If this policy changes, the update will be posted here with a revised date at the top.</p>
+
+    <h2>Contact</h2>
+    <p>Questions about privacy or data handling: <a href="mailto:tinkerboxstudio11@gmail.com">tinkerboxstudio11@gmail.com</a></p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Scraply — a private photo journal</title>
+<meta name="description" content="Scraply is a private, encrypted photo journal for Android. Your memories, backed up to your own Google Drive." />
+<style>
+  :root {
+    --bg: #f7f5f1;
+    --surface: #ffffff;
+    --text: #1a1a1a;
+    --text-secondary: #6b6b68;
+    --accent: #1366ff;
+    --border: #e5e2da;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+  .wrap {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 64px 24px 96px;
+  }
+  .badge {
+    width: 64px;
+    height: 64px;
+    border-radius: 18px;
+    background: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 700;
+    font-size: 22px;
+    margin-bottom: 24px;
+  }
+  h1 { font-size: 34px; margin: 0 0 8px; letter-spacing: -0.02em; }
+  .tagline { color: var(--text-secondary); font-size: 18px; margin: 0 0 40px; }
+  p { font-size: 16px; color: var(--text); }
+  .features {
+    display: grid;
+    gap: 16px;
+    margin: 32px 0 48px;
+  }
+  .feature {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px 20px;
+  }
+  .feature h3 { margin: 0 0 4px; font-size: 16px; }
+  .feature p { margin: 0; color: var(--text-secondary); font-size: 14px; }
+  footer {
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    font-size: 14px;
+    color: var(--text-secondary);
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .links { display: flex; gap: 20px; flex-wrap: wrap; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="badge">S</div>
+    <h1>Scraply</h1>
+    <p class="tagline">A clean, private photo journal for Android.</p>
+
+    <p>Scraply lets you organize your photos into journal folders, write memories alongside them,
+      and keep everything safely backed up — encrypted, and stored in your own Google Drive, not ours.</p>
+
+    <div class="features">
+      <div class="feature">
+        <h3>Your memories, your Drive</h3>
+        <p>Photos and journal entries are encrypted on your device and backed up to your own hidden Google Drive folder — never a server we control.</p>
+      </div>
+      <div class="feature">
+        <h3>Private by design</h3>
+        <p>Your journal content is encrypted before it ever leaves your device. Nobody but you can read it.</p>
+      </div>
+      <div class="feature">
+        <h3>Works across devices</h3>
+        <p>Sign in with the same Google account anywhere and your journal restores automatically.</p>
+      </div>
+    </div>
+
+    <footer>
+      <div class="links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="mailto:tinkerboxstudio11@gmail.com">Contact support</a>
+      </div>
+      <p style="margin-top: 16px;">Scraply is a free, independent app. No ads, no tracking, no data sold.</p>
+    </footer>
+  </div>
+</body>
+</html>
