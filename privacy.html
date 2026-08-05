@@ -26,210 +26,220 @@
   a:hover { text-decoration: underline; }
   .back { font-size: 14px; margin-bottom: 24px; display: inline-block; }
   h1 { font-size: 28px; margin: 0 0 4px; letter-spacing: -0.02em; }
-  .updated { color: var(--text-secondary); font-size: 14px; margin: 0 0 20px; }
-  .notice {
+  .updated { color: var(--text-secondary); font-size: 14px; margin: 0 0 32px; }
+  .toc {
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 12px;
-    padding: 14px 18px;
-    font-size: 13px;
-    color: var(--text-secondary);
-    margin: 0 0 36px;
+    padding: 18px 22px;
+    margin: 0 0 40px;
   }
-  h2 { font-size: 18px; margin: 40px 0 12px; }
-  h3 { font-size: 15px; margin: 20px 0 8px; }
-  p, li { font-size: 15px; color: var(--text); }
+  .toc p { margin: 0 0 10px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-secondary); font-weight: 600; }
+  .toc ol { margin: 0; padding-left: 18px; columns: 2; column-gap: 24px; }
+  .toc li { font-size: 13.5px; margin-bottom: 6px; break-inside: avoid; }
+  h2 { font-size: 17px; margin: 36px 0 10px; border-top: 1px solid var(--border); padding-top: 28px; }
+  h2:first-of-type { border-top: none; padding-top: 0; }
+  h3 { font-size: 14.5px; margin: 18px 0 6px; }
+  p, li { font-size: 14.5px; color: var(--text); }
   ul { padding-left: 20px; }
-  .card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 20px 22px;
-    margin: 16px 0;
-  }
-  table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
-  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 13.5px; }
+  th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
   th { color: var(--text-secondary); font-weight: 600; }
+  .fine { font-size: 12.5px; color: var(--text-secondary); margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); }
 </style>
 </head>
 <body>
   <div class="wrap">
     <a class="back" href="index.html">&larr; Scraply</a>
     <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: August 2026</p>
+    <p class="updated">Effective date: August 1, 2026 &nbsp;·&nbsp; Last updated: August 2026</p>
 
-    <div class="notice">This policy is written to be specific about what Scraply actually does with your
-      data, not generic boilerplate. If anything here is unclear, contact us using the details in
-      Section 12 and we'll clarify or correct it.</div>
-
-    <h2>1. Who this policy covers, and who we are</h2>
-    <p>This Privacy Policy applies to anyone who uses the Scraply Android application ("Scraply," "the
-      app," "we," "us," "our"). Scraply is developed and operated by an individual developer based in
-      India. Throughout this policy, the person using the app is referred to as "you" or "the user" —
-      under the terminology of India's Digital Personal Data Protection Act, 2023, you are the "Data
-      Principal" and Scraply acts as the "Data Fiduciary" responsible for your personal data.</p>
-    <p>By using Scraply, you agree to the collection and use of information as described in this policy.
-      If you do not agree, please do not use the app.</p>
-
-    <h2>2. Information we collect</h2>
-
-    <h3>2.1 Information collected via Google Sign-In</h3>
-    <p>Scraply uses Google Sign-In as its only method of authentication. When you sign in, Google shares
-      the following with us, with your consent, at the moment of sign-in:</p>
-    <ul>
-      <li>Your name</li>
-      <li>Your email address</li>
-      <li>Your Google account profile photo (if you have one)</li>
-      <li>A unique, non-public identifier for your Google account, used internally to link your data to
-        your account — this is not your email address or any other human-readable identifier</li>
-    </ul>
-    <p>We do not receive your Google account password, payment information, or any other Google account
-      data beyond what's listed above.</p>
-
-    <h3>2.2 Your journal content (photos and memories)</h3>
-    <p>Scraply is a photo journal app. As part of using it, you create the following content, which is
-      stored, encrypted, in your own Google Drive account (see Section 4 for exactly how):</p>
-    <ul>
-      <li>Photos you add to journal folders</li>
-      <li>Text memories and notes you write alongside those photos</li>
-      <li>Folder names, dates, and organizational metadata (stickers, color tags) you assign</li>
-    </ul>
-    <p>This content is encrypted on your device before it ever leaves it. We — the developer — do not
-      have the ability to read, view, or access this content in any readable form. Section 4 explains the
-      technical detail behind this, not just an assertion of it.</p>
-
-    <h3>2.3 Minimal account data stored on our servers</h3>
-    <p>We use Supabase (a third-party backend infrastructure provider) to store a small amount of account
-      metadata, needed purely to make sign-in and cross-device recovery work. This is the complete list of
-      what's stored there — nothing about your journal content is included:</p>
-    <table>
-      <tr><th>Field</th><th>Purpose</th></tr>
-      <tr><td>Account identifier</td><td>Links your Google account to your app data. Not human-readable, not your email.</td></tr>
-      <tr><td>Onboarding status</td><td>A true/false flag: have you completed initial app setup. Used to decide whether to show onboarding on sign-in.</td></tr>
-      <tr><td>Encryption key</td><td>Your randomly-generated backup encryption key (see Section 4), stored so you can recover your journal on a new device. Protected so only your own authenticated account can retrieve it.</td></tr>
-    </table>
-
-    <h3>2.4 Device permissions</h3>
-    <p>Scraply requests access to your device's photo library, solely so you can select photos to add to
-      your journal. We do not access your photo library in the background, and we do not scan, analyze,
-      or upload any photo you don't explicitly choose to add.</p>
-
-    <h3>2.5 What we do NOT collect</h3>
-    <ul>
-      <li>We do not use any advertising or analytics SDKs.</li>
-      <li>We do not track your location.</li>
-      <li>We do not access your contacts, call logs, SMS, or other apps.</li>
-      <li>We do not collect device identifiers for advertising purposes.</li>
-    </ul>
-
-    <h2>3. How we use your information</h2>
-    <p>We use the information described above solely to:</p>
-    <ul>
-      <li>Authenticate you and maintain your signed-in session</li>
-      <li>Determine whether you're a new or returning user, to route you to the correct screen</li>
-      <li>Back up and restore your journal content, automatically, to and from your own Google Drive</li>
-      <li>Recover your encryption key on a new device after you sign in again</li>
-      <li>Respond to support requests you send us</li>
-    </ul>
-    <p>We do not use your information for advertising, do not build behavioral profiles, and do not sell,
-      rent, or trade your information to any third party under any circumstances.</p>
-
-    <h2>4. How your journal content is protected — the technical detail</h2>
-    <div class="card">
-      <p style="margin:0 0 12px">Every photo and every piece of journal text is encrypted using AES-256-GCM
-        (an industry-standard encryption algorithm) directly on your device, before any of it is
-        transmitted anywhere. The encryption key used is:</p>
-      <ul style="margin:0">
-        <li>Generated randomly on your device the first time you back up — never derived from your
-          Google account ID, your email, or anything guessable.</li>
-        <li>Stored locally on your device in secure, OS-protected storage.</li>
-        <li>Also stored in our Supabase database, protected by database-level access rules so that only
-          your own authenticated account can ever retrieve it — this is what lets you recover your
-          journal on a new device without a separate password to remember.</li>
-      </ul>
+    <div class="toc">
+      <p>Contents</p>
+      <ol>
+        <li>Introduction</li>
+        <li>Definitions</li>
+        <li>Information We Collect</li>
+        <li>How We Use Your Information</li>
+        <li>Legal Basis for Processing</li>
+        <li>Security Measures</li>
+        <li>Disclosure of Information</li>
+        <li>Data Retention</li>
+        <li>Your Rights</li>
+        <li>Managing Account Access</li>
+        <li>International Data Transfers</li>
+        <li>Children's Privacy</li>
+        <li>Changes to This Policy</li>
+        <li>Grievance Officer</li>
+        <li>Governing Law</li>
+        <li>Contact Us</li>
+      </ol>
     </div>
-    <p>Your encrypted backup is written to a special hidden folder in your own Google Drive account
-      (Google calls this the <code>appDataFolder</code>) — it is not visible in your regular Drive
-      interface, cannot be browsed by you or any other app, and exists entirely within your own Google
-      account's storage, not on a server we operate.</p>
 
-    <h2>5. Who we share information with</h2>
-    <p>We work with the following service providers, each acting as a data processor on our behalf, under
-      their own respective privacy and security commitments:</p>
+    <h2>1. Introduction</h2>
+    <p>This Privacy Policy ("Policy") describes how the developer of the Scraply Android application
+      (the "Company," "we," "us," or "our") collects, uses, discloses, and safeguards information in
+      connection with the Scraply application (the "Service"). This Policy is incorporated by reference
+      into, and forms part of, our <a href="terms.html">Terms of Service</a>.</p>
+    <p>By downloading, installing, or using the Service, you acknowledge that you have read and understood
+      this Policy. If you do not agree with its terms, you must not use the Service.</p>
+
+    <h2>2. Definitions</h2>
     <table>
-      <tr><th>Provider</th><th>What they handle</th></tr>
-      <tr><td>Google (Sign-In &amp; Drive)</td><td>Authentication, and storage of your encrypted journal backup in your own Drive account.</td></tr>
-      <tr><td>Supabase</td><td>Storage of the minimal account metadata described in Section 2.3.</td></tr>
+      <tr><td style="width:180px"><strong>"User," "you," "your"</strong></td><td>The individual who downloads, installs, or uses the Service.</td></tr>
+      <tr><td><strong>"Personal Data"</strong></td><td>Any information relating to an identified or identifiable natural person, as described in Section 3.</td></tr>
+      <tr><td><strong>"Content"</strong></td><td>Photographs, text, folder metadata, and any other material a User creates or uploads within the Service.</td></tr>
+      <tr><td><strong>"Processing"</strong></td><td>Any operation performed on Personal Data, including collection, storage, use, or disclosure.</td></tr>
+      <tr><td><strong>"Data Fiduciary" / "Data Principal"</strong></td><td>As defined under India's Digital Personal Data Protection Act, 2023 ("DPDP Act"). The Company acts as the Data Fiduciary; the User is the Data Principal.</td></tr>
+      <tr><td><strong>"Sub-processor"</strong></td><td>A third-party service provider engaged by the Company to Process Personal Data on its behalf, as identified in Section 7.</td></tr>
     </table>
-    <p>We do not share your information with any other third party, data broker, or advertiser, and we do
-      not sell your personal data.</p>
-    <p>We may disclose information if required to by law, a valid legal process, or to protect the rights,
-      safety, or property of Scraply, our users, or the public — but given the encrypted, zero-knowledge
-      design described in Section 4, we would not be able to produce your actual journal content even if
-      legally compelled to, since we do not hold a readable copy of it.</p>
 
-    <h2>6. Data retention</h2>
-    <p>Your journal content remains in your own Google Drive for as long as you keep the app installed and
-      your Google account active, or until you delete it yourself (via Drive's own account settings, or
-      via Scraply's own delete controls). The minimal account record described in Section 2.3 is retained
-      for as long as your account is active, and deleted upon a verified deletion request.</p>
+    <h2>3. Information We Collect</h2>
+    <h3>3.1 Account information</h3>
+    <p>When you authenticate using Google Sign-In, the Company receives, with your consent, the following
+      Personal Data from Google: your name, email address, profile photograph (where available), and a
+      unique account identifier. The Company does not receive your Google account password or any
+      Google account data beyond what is listed here.</p>
+    <h3>3.2 Content</h3>
+    <p>The Service allows you to create Content, consisting of photographs, written entries, and
+      associated organizational metadata (folder names, dates, and visual tags). Content is subject to the
+      security measures described in Section 6.</p>
+    <h3>3.3 Account records</h3>
+    <p>The Company maintains a limited account record for each User, consisting of: (a) an internal
+      account identifier; (b) an onboarding-completion flag; and (c) a Content encryption key, as further
+      described in Section 6. This record does not include any Content.</p>
+    <h3>3.4 Device permissions</h3>
+    <p>The Service requests access to the device's photo library for the sole purpose of allowing the User
+      to select photographs for inclusion in Content. This access is not used for any other purpose.</p>
+    <h3>3.5 Categories of data not collected</h3>
+    <p>The Company does not collect precise or approximate location data, contacts, call logs, SMS
+      messages, or data from other applications installed on the User's device. The Service does not
+      incorporate advertising or analytics software development kits, and does not generate advertising
+      identifiers.</p>
 
-    <h2>7. Your rights</h2>
-    <p>Depending on your location, you may have some or all of the following rights regarding your
-      personal data. We honor these rights for all users, regardless of location, not only where legally
-      mandated:</p>
+    <h2>4. How We Use Your Information</h2>
+    <p>The Company Processes Personal Data solely for the following purposes:</p>
     <ul>
-      <li><strong>Right to access</strong> — request a summary of what account data we hold about you.</li>
-      <li><strong>Right to correction</strong> — request correction of inaccurate account data.</li>
-      <li><strong>Right to erasure</strong> — request deletion of your account record from our systems.</li>
-      <li><strong>Right to withdraw consent</strong> — stop using the app and disconnect its access to
-        your Google account at any time (see Section 8).</li>
-      <li><strong>Right to grievance redressal</strong> — raise a complaint about how your data is
-        handled (see Section 12, Grievance Officer).</li>
+      <li>To authenticate Users and maintain an active session;</li>
+      <li>To distinguish new Users from returning Users for routing purposes;</li>
+      <li>To synchronize, back up, and restore Content between the User's device and the User's own Google
+        Drive account;</li>
+      <li>To recover a User's encryption key upon sign-in from a new device;</li>
+      <li>To respond to support inquiries directed to the Company.</li>
     </ul>
-    <p>To exercise any of these rights, contact us using the details in Section 12. We aim to respond
-      within a reasonable time, generally within 30 days.</p>
+    <p>The Company does not use Personal Data for advertising, does not construct behavioral or interest
+      profiles, and does not sell, rent, license, or otherwise trade Personal Data to any third party.</p>
 
-    <h2>8. Disconnecting Scraply from your Google account</h2>
-    <p>You can revoke Scraply's access to your Google account at any time, independently of the app
-      itself, via your Google Account's own security settings: <strong>myaccount.google.com &rarr;
-      Security &rarr; Third-party apps with account access</strong>. This immediately and permanently
-      revokes the app's access; your journal content remains in your Drive's hidden app folder until you
-      separately choose to remove it.</p>
+    <h2>5. Legal Basis for Processing</h2>
+    <p>Where applicable law requires a legal basis for Processing, the Company relies on: (a) your consent,
+      given at sign-in and revocable at any time as described in Section 10; and (b) the necessity of
+      Processing to perform the Service you have requested (i.e., to provide account authentication and
+      backup functionality).</p>
 
-    <h2>9. Account and data deletion</h2>
-    <p>To request deletion of your account record from our systems, email us at the address in Section 12.
-      We will delete your account metadata (Section 2.3) promptly upon a verified request. Since your
-      journal content lives in your own Google Drive, not on our servers, deleting it is done directly
-      through Google Drive, or through Scraply's own delete controls within the app.</p>
+    <h2>6. Security Measures</h2>
+    <p>Content is encrypted on the User's device using AES-256-GCM prior to transmission. The encryption
+      key applied to a User's Content is:</p>
+    <ul>
+      <li>generated using a cryptographically random process on the User's device and is not derived from
+        the User's Google account identifier, email address, or any other predictable value;</li>
+      <li>stored locally in operating-system-protected storage on the User's device; and</li>
+      <li>stored, in addition, within the Company's database, subject to access controls restricting
+        retrieval to the authenticated User's own account, so as to permit recovery on a new device.</li>
+    </ul>
+    <p>Encrypted Content is stored in a restricted, application-specific directory within the User's own
+      Google Drive account (the <code>appDataFolder</code>), which is not visible through the standard
+      Google Drive interface and is not accessible to other applications. The Company does not operate a
+      server on which unencrypted Content is stored, and does not possess the technical capability to
+      access Content in intelligible form.</p>
+    <p>No method of electronic storage or transmission is entirely secure. While the Company implements
+      the measures described above, it cannot guarantee absolute security.</p>
 
-    <h2>10. Children's privacy</h2>
-    <p>Scraply is not directed at, and is not intended for use by, children under the age of 18. We do
-      not knowingly collect personal information from children. If you believe a child has provided us
-      with personal information, contact us and we will take steps to delete it.</p>
+    <h2>7. Disclosure of Information</h2>
+    <p>The Company engages the following Sub-processors in connection with the Service:</p>
+    <table>
+      <tr><th>Sub-processor</th><th>Function</th></tr>
+      <tr><td>Google LLC</td><td>Authentication (Google Sign-In) and storage of encrypted Content backups within the User's own Google Drive account.</td></tr>
+      <tr><td>Supabase, Inc.</td><td>Storage of the account record described in Section 3.3.</td></tr>
+    </table>
+    <p>The Company does not disclose Personal Data to any party other than the Sub-processors identified
+      above, except: (a) where required to comply with applicable law, regulation, legal process, or
+      governmental request; (b) to protect the rights, property, or safety of the Company, its Users, or
+      the public; or (c) in connection with a merger, acquisition, or sale of assets, subject to
+      continued protection of Personal Data under materially equivalent terms. The Company does not sell
+      Personal Data.</p>
 
-    <h2>11. Changes to this policy</h2>
-    <p>We may update this policy from time to time to reflect changes in the app or in applicable law.
-      Material changes will be reflected here with an updated "Last updated" date at the top of this page.
-      Continued use of the app after a change constitutes acceptance of the updated policy.</p>
+    <h2>8. Data Retention</h2>
+    <p>Content is retained within the User's own Google Drive account for as long as the User maintains
+      the Service installed and the associated Google account active, or until deleted by the User through
+      Google Drive or through the Service's deletion controls. The account record described in Section 3.3
+      is retained for the duration of the account's active status and is deleted upon a verified deletion
+      request under Section 9.</p>
 
-    <h2>12. Contact and Grievance Officer</h2>
-    <p>For any question about this policy, to exercise any of the rights in Section 7, or to raise a
-      grievance about how your data is handled (in accordance with India's Digital Personal Data
-      Protection Act, 2023 and applicable IT Rules), contact:</p>
-    <p><strong>Email:</strong> <a href="mailto:tinkerboxstudio11@gmail.com">tinkerboxstudio11@gmail.com</a></p>
-    <p>We aim to acknowledge grievances promptly and resolve them within a reasonable time.</p>
+    <h2>9. Your Rights</h2>
+    <p>Subject to applicable law, and irrespective of your jurisdiction, you may exercise the following
+      rights by contacting the Company as described in Section 16:</p>
+    <ul>
+      <li><strong>Right to access</strong> — obtain confirmation of, and access to, the Personal Data the
+        Company holds about you.</li>
+      <li><strong>Right to correction</strong> — request correction of inaccurate Personal Data.</li>
+      <li><strong>Right to erasure</strong> — request deletion of your account record.</li>
+      <li><strong>Right to withdraw consent</strong> — withdraw consent to Processing at any time, without
+        affecting the lawfulness of Processing carried out prior to withdrawal.</li>
+      <li><strong>Right to grievance redressal</strong> — lodge a grievance regarding the Processing of
+        your Personal Data with the Grievance Officer named in Section 14.</li>
+      <li><strong>Right to data portability</strong> — where technically feasible, obtain a copy of your
+        account record in a structured, commonly used format.</li>
+    </ul>
+    <p>The Company will respond to verified requests within thirty (30) days, or such shorter period as
+      required by applicable law.</p>
 
-    <h2>13. Governing law</h2>
-    <p>This policy, and any dispute arising from it, is governed by the laws of India, including the
-      Digital Personal Data Protection Act, 2023 and the Information Technology Act, 2000 and its
-      associated rules. For users outside India, we make reasonable efforts to honor equivalent data
-      protection principles found in regulations such as the GDPR (EU/EEA) and CCPA (California) — in
-      particular the rights described in Section 7 — regardless of where you're located.</p>
+    <h2>10. Managing Account Access</h2>
+    <p>You may revoke the Service's access to your Google account at any time, independently of the
+      Service, through your Google Account settings at <strong>myaccount.google.com &rarr; Security
+      &rarr; Third-party apps with account access</strong>. Revocation takes effect immediately with
+      respect to future Processing; Content previously stored in your Google Drive's application-specific
+      directory remains there until separately deleted by you.</p>
 
-    <div class="notice" style="margin-top:48px">This document is provided for transparency about our
-      data practices and does not constitute formal legal advice. If you require legal advice regarding
-      this policy or your rights, please consult a qualified lawyer.</div>
+    <h2>11. International Data Transfers</h2>
+    <p>The Company's Sub-processors may Process Personal Data on servers located outside your country of
+      residence, including in the United States. Where such transfers occur, the Company relies on the
+      respective Sub-processor's own compliance mechanisms (including standard contractual clauses and
+      equivalent safeguards) for cross-border transfer of Personal Data.</p>
+
+    <h2>12. Children's Privacy</h2>
+    <p>The Service is not directed to, and is not intended for use by, individuals under eighteen (18)
+      years of age. The Company does not knowingly collect Personal Data from children. If the Company
+      becomes aware that it has collected Personal Data from a child, it will take reasonable steps to
+      delete such data promptly.</p>
+
+    <h2>13. Changes to This Policy</h2>
+    <p>The Company may amend this Policy from time to time to reflect changes in the Service or in
+      applicable law. Material amendments will be reflected by an updated "Last updated" date at the top
+      of this page. Continued use of the Service following any amendment constitutes acceptance of the
+      amended Policy.</p>
+
+    <h2>14. Grievance Officer</h2>
+    <p>In accordance with the DPDP Act and applicable rules under the Information Technology Act, 2000,
+      the following individual serves as Grievance Officer for matters concerning this Policy:</p>
+    <p>Developer of Scraply<br />Email: <a href="mailto:tinkerboxstudio11@gmail.com">tinkerboxstudio11@gmail.com</a></p>
+    <p>The Grievance Officer will acknowledge grievances and endeavor to resolve them within the timeframe
+      prescribed by applicable law.</p>
+
+    <h2>15. Governing Law</h2>
+    <p>This Policy is governed by the laws of India, including the Digital Personal Data Protection Act,
+      2023 and the Information Technology Act, 2000, together with the rules framed thereunder. Where
+      applicable to Users located outside India, the Company endeavors, on a best-efforts basis, to afford
+      rights materially consistent with those set out in the General Data Protection Regulation (EU/EEA)
+      and the California Consumer Privacy Act, without thereby submitting to the jurisdiction of those
+      frameworks.</p>
+
+    <h2>16. Contact Us</h2>
+    <p>Questions regarding this Policy, or requests concerning the rights described in Section 9, may be
+      directed to: <a href="mailto:tinkerboxstudio11@gmail.com">tinkerboxstudio11@gmail.com</a></p>
+
+    <p class="fine">This Policy is provided to describe the Company's data practices and does not
+      constitute legal advice. Users seeking legal advice regarding their rights should consult a
+      qualified professional.</p>
   </div>
 </body>
 </html>
