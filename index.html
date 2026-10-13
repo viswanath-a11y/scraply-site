@@ -380,6 +380,9 @@
     .reveal { opacity: 1; transform: none; }
     .wr .w, .fade-copy, .tag.late { opacity: 1 !important; transform: none !important; }
   }
+
+  /* phones + tablets: top buttons slide away while scrolling down, come back on scroll up */
+  @media (max-width: 900px) { .pill-btn { transition: transform .45s cubic-bezier(.19,1,.22,1), filter .3s ease, opacity .6s ease; } body.nav-away .pill-btn { transform: translateY(-140%); } }
 </style>
 </head>
 <body>
@@ -672,6 +675,18 @@
   };
   Promise.all([document.fonts ? document.fonts.ready : 0, new Promise((r) => (document.readyState === 'complete' ? r() : addEventListener('load', r)))]).then(show);
   setTimeout(show, 2500);
+})();
+</script>
+<script>
+(() => {
+  let last = scrollY, ticking = false;
+  const menu = document.getElementById("menu");
+  addEventListener("scroll", () => { if (ticking) return; ticking = true; requestAnimationFrame(() => {
+    const y = scrollY, d = y - last;
+    if (menu && menu.classList.contains("open")) { document.body.classList.remove("nav-away"); }
+    else if (y < 80 || d < -6) document.body.classList.remove("nav-away");
+    else if (d > 6) document.body.classList.add("nav-away");
+    if (Math.abs(d) > 6) last = y; ticking = false; }); }, { passive: true });
 })();
 </script>
 </body>

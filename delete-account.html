@@ -61,5 +61,17 @@
   <div class="links"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a><a href="delete-account.html">Delete Your Account</a><a href="mailto:tinkerboxstudio11@gmail.com">Contact support</a></div>
   <small>© 2026 Scraply. A free, independent app.</small>
 </footer>
+<script>
+(() => {
+  let last = scrollY, ticking = false;
+  const menu = document.getElementById("menu");
+  addEventListener("scroll", () => { if (ticking) return; ticking = true; requestAnimationFrame(() => {
+    const y = scrollY, d = y - last;
+    if (menu && menu.classList.contains("open")) { document.body.classList.remove("nav-away"); }
+    else if (y < 80 || d < -6) document.body.classList.remove("nav-away");
+    else if (d > 6) document.body.classList.add("nav-away");
+    if (Math.abs(d) > 6) last = y; ticking = false; }); }, { passive: true });
+})();
+</script>
 </body>
 </html>

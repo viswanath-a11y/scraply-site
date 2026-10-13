@@ -94,3 +94,6 @@ th { background: var(--sky); color: var(--ink); font-weight: 700; }
   .toc ol { columns: 1; }
   .wrap { margin-inline: 10px; }
 }
+
+  /* phones + tablets: top buttons slide away while scrolling down, come back on scroll up */
+  @media (max-width: 900px) { .pill-btn { transition: transform .45s cubic-bezier(.19,1,.22,1), filter .3s ease, opacity .6s ease; } body.nav-away .pill-btn { transform: translateY(-140%); } }
