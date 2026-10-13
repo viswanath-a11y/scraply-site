@@ -1,0 +1,96 @@
+/* Shared look for the legal pages (privacy, terms, delete-account), matching the homepage:
+   cream paper, deep-blue ink outlines, Grandstander headings, ticket-stub top buttons,
+   and the Scraply folder as the page header. */
+:root {
+  --page: #fdf9f2; --paper: #f8f2e7; --card: #fffdf8;
+  --ink: #17224a; --text: #2b3253; --muted: #6b6f86; --rule: #e6dccb;
+  --blue: #1366ff; --pink: #f7cfd9; --sky: #d4e1f7;
+  --line: 2px solid var(--ink);
+  --display: "Grandstander", ui-rounded, system-ui, sans-serif;
+  --body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --pop: cubic-bezier(.2, 1.5, .4, 1);
+}
+* { box-sizing: border-box; margin: 0; }
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: 100px; }
+body { background: var(--page); color: var(--text); font: 16px/1.7 var(--body); }
+a { color: var(--blue); text-decoration: none; font-weight: 600; }
+a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+/* ticket-stub buttons (same as homepage) */
+.pill-btn { position: fixed; top: 22px; z-index: 60; display: inline-flex; align-items: stretch; height: 52px; text-decoration: none !important;
+            font: 700 14px var(--body); letter-spacing: .08em; text-transform: uppercase; color: var(--ink); --bg: #fff3e6;
+            filter: drop-shadow(0 4px 0 var(--ink)); transition: transform .45s var(--pop), filter .3s ease; }
+#backBtn { left: clamp(14px, 4vw, 56px); }
+#playBtn { right: clamp(14px, 4vw, 56px); --bg: var(--blue); color: #fff; }
+.bmain, .bstub { display: flex; align-items: center; height: 100%; background: var(--bg); border: 2px solid var(--ink); }
+.bmain { padding: 0 18px 0 24px; border-right: 0; border-radius: 9px 0 0 9px;
+  -webkit-mask: radial-gradient(circle 8px at 0 50%, transparent 98%, #000); mask: radial-gradient(circle 8px at 0 50%, transparent 98%, #000); }
+.bstub { padding: 0 12px; border-left: 2px dashed var(--ink); border-radius: 0 9px 9px 0; transition: transform .45s var(--pop);
+  -webkit-mask: radial-gradient(circle 8px at 100% 50%, transparent 98%, #000); mask: radial-gradient(circle 8px at 100% 50%, transparent 98%, #000); }
+#backBtn .bstub { order: -1; border-left: 2px solid var(--ink); border-right: 0; border-radius: 9px 0 0 9px;
+  -webkit-mask: radial-gradient(circle 8px at 0 50%, transparent 98%, #000); mask: radial-gradient(circle 8px at 0 50%, transparent 98%, #000); }
+#backBtn .bmain { border-right: 2px solid var(--ink); border-left: 2px dashed var(--ink); border-radius: 0 9px 9px 0; padding: 0 22px 0 18px;
+  -webkit-mask: radial-gradient(circle 8px at 100% 50%, transparent 98%, #000); mask: radial-gradient(circle 8px at 100% 50%, transparent 98%, #000); }
+.pill-btn:hover .bstub { transform: translateX(5px) rotate(6deg); }
+#backBtn:hover .bstub { transform: translateX(-5px) rotate(-6deg); }
+.pill-btn:active { transform: translateY(3px); filter: drop-shadow(0 1px 0 var(--ink)); }
+.bstub svg { width: 20px; height: 20px; }
+.gp-chip { width: 34px; height: 34px; border-radius: 50%; background: #fff; border: 1.5px solid var(--ink); display: grid; place-items: center; }
+.gp { width: 20px; height: 20px; margin-left: 2px; }
+
+/* header: the Scraply folder, title on its pocket */
+.lhead { position: relative; margin: 48px clamp(10px, 1.6vw, 22px) 0; padding-top: 56px; }
+.lhead .fold-back { position: absolute; inset: 0; border: var(--line); border-radius: 28px; background: linear-gradient(180deg, #4d86ff, var(--blue)); }
+.lhead .lip { position: relative; display: block; width: 100%; height: clamp(56px, 7vw, 100px); margin-bottom: -2px; z-index: 2;
+              filter: drop-shadow(0 -4px 6px rgba(23,34,74,.12)); }
+.lhead .wordmark { position: absolute; z-index: 5; top: 26px; left: 50%; translate: -50% 0; width: clamp(130px, 15vw, 210px);
+                   filter: drop-shadow(0 5px 0 rgba(23,34,74,.35)); }
+.lhead .sheet { position: relative; z-index: 2; border: var(--line); border-top: 0; border-radius: 0 0 28px 28px; text-align: center;
+                background: linear-gradient(180deg, var(--paper), var(--page)); padding: 6px 20px clamp(34px, 4vw, 56px); overflow: hidden; }
+.lhead .sheet::before { content: ""; position: absolute; inset: 0; background-image: radial-gradient(#e2d8c4 1.4px, transparent 1.5px); background-size: 26px 26px; opacity: .7; }
+.lhead .sheet > * { position: relative; }
+.tag { display: inline-flex; padding: 6px 18px; border: var(--line); border-radius: 999px; background: var(--card); font: 600 13.5px var(--body);
+       color: var(--ink); box-shadow: 0 4px 0 var(--ink); }
+h1 { font: 800 clamp(40px, 6vw, 76px)/1.02 var(--display); color: var(--ink); margin: 18px 0 10px; }
+.updated { color: var(--muted); font-size: 14.5px; }
+
+/* the document: a paper card */
+.wrap { max-width: 820px; margin: clamp(30px, 4vw, 56px) auto 0; padding: clamp(28px, 4vw, 54px) clamp(22px, 4.5vw, 60px);
+        background: var(--card); border: var(--line); border-radius: 28px; box-shadow: 0 8px 0 var(--ink); }
+.wrap > *:first-child { margin-top: 0; }
+.toc { background: var(--page); border: 1.5px dashed #c9bfae; border-radius: 20px; padding: 20px 24px; margin: 0 0 40px; }
+.toc p { margin: 0 0 10px; font: 700 12.5px var(--body); text-transform: uppercase; letter-spacing: .1em; color: var(--blue); }
+.toc ol { margin: 0; padding-left: 20px; columns: 2; column-gap: 28px; }
+.toc li { font-size: 14px; margin-bottom: 6px; break-inside: avoid; }
+.toc li::marker { color: var(--muted); font-weight: 600; }
+h2 { font: 800 clamp(22px, 2.4vw, 28px)/1.2 var(--display); color: var(--ink); margin: 44px 0 12px; padding-top: 30px; border-top: 1.5px dashed var(--rule); }
+.toc + h2, .wrap > h2:first-of-type { border-top: 0; padding-top: 0; }
+h3 { font: 700 16.5px/1.35 var(--body); color: var(--ink); margin: 22px 0 6px; }
+p, li { font-size: 15.5px; color: var(--text); }
+p { margin: 0 0 14px; }
+ul, ol { padding-left: 22px; margin: 0 0 14px; }
+li { margin-bottom: 6px; }
+strong { color: var(--ink); }
+table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 16px 0 20px; font-size: 14px; border: 1.5px solid var(--ink); border-radius: 16px; overflow: hidden; }
+th, td { text-align: left; padding: 11px 14px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+tr:last-child td { border-bottom: 0; }
+th { background: var(--sky); color: var(--ink); font-weight: 700; }
+.card { background: var(--pink); border: var(--line); border-radius: 20px; padding: 20px 24px; margin: 18px 0 26px; box-shadow: 0 5px 0 var(--ink); line-height: 1.9; }
+.fine { font-size: 13.5px; color: var(--muted); margin-top: 44px; padding-top: 22px; border-top: 1.5px dashed var(--rule); }
+
+/* footer */
+.lfoot { margin: clamp(40px, 6vw, 72px) clamp(10px, 1.6vw, 22px) 24px; background: var(--blue); border: var(--line); border-radius: 28px; color: #fff;
+         text-align: center; padding: 30px 20px 26px; background-image: radial-gradient(rgba(255,255,255,.18) 1.4px, transparent 1.5px); background-size: 26px 26px; }
+.lfoot .links { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px 26px; font-size: 14.5px; }
+.lfoot .links a { color: #fff; }
+.lfoot small { display: block; margin-top: 10px; color: #c9d8ff; font-size: 13px; }
+
+@media (max-width: 640px) {
+  .lhead { margin-top: 84px; }
+  .lhead .wordmark { width: 120px; top: 22px; }
+  #backBtn .bmain { display: none; }
+  #backBtn .bstub { border-right: 2px solid var(--ink); border-radius: 9px; }
+  .pill-btn { height: 46px; font-size: 12px; }
+  .toc ol { columns: 1; }
+  .wrap { margin-inline: 10px; }
+}
